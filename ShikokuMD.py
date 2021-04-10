@@ -5,7 +5,7 @@ import colorama
 import requests
 import time
 from colorama import Fore
-
+from discord.ext import commands
 
 
 def Clear():
