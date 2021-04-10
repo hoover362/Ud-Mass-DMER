@@ -15,8 +15,8 @@ Clear()
 while True:
     Text = input("[+] Enter Text : ")
     if Text =="TEXT_HERE":
-        print("You didn't add text?")
-        input("Make sure to add text")
+        print(f'[{Fore.RED}-{Fore.RESET}] You didnt put a message')
+        input("Press any key")
         exit(0)
     else:
         print("[+] Press Enter to continue")
