@@ -68,9 +68,7 @@ async def on_connect():
       Shikoku = discord.Embed(color= discord.Color(000000))
       Shikoku.set_footer(text="Shikoku")
       Shikoku.set_author(name="")
-      Shikoku.add_field(name="Shikoku owns you",value=Text)
-      Shikoku.set_image(url="https://media.discordapp.net/attachments/830442015006130180/830442093351534592/original_12.gif")
-      await user.send(embed=Heyo)
+      await user.send(embed=Shikoku)
       print(f"messaged: {user.name}")
     except:
        print(f"Message failed to send to: {user.name}")
