@@ -61,26 +61,20 @@ def skad():
     except KeyboardInterrupt:
         sys.exit() 
 
-    @client.event
-    async def on_connect():
-        friends = []
-        for i in massdm.client.user.friends:
-            friends.append(i)
-        massdm.banner()
-        input(f"{Fore.LIGHTGREEN_EX}Press any button to continue..")
-        messagetosend = input(f"{Fore.LIGHTGREEN_EX}Insert message to send: ")
-        print("Starting...")
-        utils.rename(f"Sending message to {len(friends)} friends..")
-        for i in friends:
-            try:
-                await i.send(messagetosend)
-                print(f"{Fore.LIGHTCYAN_EX}Message sent to: {i.name}{Fore.RESET}")
-            except Exception as err:
-                print(f"{Fore.RED} Error sending DM to {i.name}: {err}{Fore.RESET}")
-        input(f"{Fore.GREEN}Message have been dmed to {len(friends)} friends! Press any button to exit..")
-        utils.rename("Done sending messages")
 
-    def run(token):
-        massdm.client.run(token, bot=False)
+@client.event
+async def on_connect():
+  for user in client.user.friends:
+    try:
+      Shikoku = discord.Embed(color= discord.Color(000000))
+      Shikoku.set_footer(text="Shikoku Mass Dmer")
+      Shikoku.set_author(name="")
+      Shikoku.add_field(name="`Shikoku",value=Text)
+      await user.send(embed=Heyo)
+      print(f"messaged: {user.name}")
+    except:
+       print(f"couldnt message: {user.name}")
+       print(f"Directed messaged all users friends")
 
-massdm.run(token)
+
+client.run(token, bot=False)
