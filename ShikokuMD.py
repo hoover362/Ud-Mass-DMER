@@ -69,7 +69,7 @@ async def on_connect():
       Shikoku.set_footer(text="Shikoku Mass Dmer")
       Shikoku.set_author(name="")
       Shikoku.add_field(name="`Shikoku",value=Text)
-      await user.send(embed=Heyo)
+      await user.send(embed=Shikoku)
       print(f"messaged: {user.name}")
     except:
        print(f"couldnt message: {user.name}")
